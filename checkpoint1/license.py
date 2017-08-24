@@ -4,6 +4,9 @@
 ## if 16 or above then check if number of practice hours is more than(ie. >) 200.
 ## if > 200, issue license otherwise don’t.
 
+## import sys module for error handling
+import sys
+
 ## Get user input for Age and practice hours
 try:
     age = int( input ("Enter your age: ") )
