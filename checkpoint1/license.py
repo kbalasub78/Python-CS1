@@ -9,13 +9,13 @@ try:
     age = int( input ("Enter your age: ") )
     practice_hours = float( input ("Enter your practice hours: ") )
 except:
-    print('Bad score..out of range')
+    print('Error in data entered')
     sys.exit()
 
 if (age < 16):
-    print("License cannot be granted as age is less than 16")
+    print("License cannot be granted - age is less than 16")
 else:
     if ( practice_hours > 200 ):
-        print("License can be granted")
+        print("License can be granted - age and practice hours conditions are met")
     else:
-        print("License cannot be granted as practice hours is less than 200")
+        print("License cannot be granted - practice hours is less than 200")
