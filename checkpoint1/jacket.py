@@ -1,3 +1,4 @@
+## jacket.py
 ## Write a program to accept the temperature value and
 ## to tell a person to bring heavy jacket if temperature is < 20,
 ## if temperature is between 20 and 30, bring light jacket.
@@ -14,6 +15,7 @@ except:
     print('Error in data entered')
     sys.exit()
 
+## Check the range of temperature and suggest the type of jacket to wear
 if (temperature < 20):
     print("Bring a heavy jacket")
 elif ( temperature >= 20 and temperature < 30):
