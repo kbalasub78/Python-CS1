@@ -1,3 +1,4 @@
+## sleep_in.py
 ## Write a program to accept Weekday and Vacation values.
 ## Weekday is True if it is a weekday and
 ## the vacation is True if we are on vacation.
@@ -11,7 +12,7 @@ import sys
 ## Get user input if it is a weekday or on vacation
 try:
     weekday = input ("Is it a weekday? (True or False) :").lower()
-    vacation = input ("Is it a vacation? (True or False) :").lower()
+    vacation = input ("Are you on a vacation? (True or False) :").lower()
     if( (weekday != 'true' and weekday != 'false') or \
         (vacation != 'true' and vacation != 'false') ):
         raise ValueError("Input data format is incorrect")
@@ -19,6 +20,7 @@ except:
     print("Input data format is incorrect")
     sys.exit()
 
+## Sleep in condition is met if it is not a weekday or if user is on vacation
 if ( weekday != 'true' or vacation == 'true' ):
     print("Sleep-in is True")
 else:
