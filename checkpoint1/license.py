@@ -1,3 +1,4 @@
+## license.py
 ## Write a python program simulating driver's license provision.
 ## Accept the age of the driver and his total number of practice hours.
 ## If driver’s age is below 16, do not issue license.
@@ -15,6 +16,7 @@ except:
     print('Error in data entered')
     sys.exit()
 
+## Check if the drivers age is above 16 and has practiced for more than 200 hours
 if (age < 16):
     print("License cannot be granted - age is less than 16")
 else:
