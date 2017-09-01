@@ -26,15 +26,11 @@ while True:
     numTotal += numInput ## Add input number to Total
 
     # Check if input number is bigger than the max number
-    if(numMax is None):
-        numMax = numInput
-    elif(numInput > numMax):
+    if(numMax is None or numInput > numMax):
         numMax = numInput
 
     # Check if input number is smaller than the min number
-    if(numMin is None):
-        numMin = numInput
-    elif(numInput < numMin):
+    if(numMin is None or numInput < numMin):
         numMin = numInput
 
 # Print Total, Count, Maximum and Minimum numbers
