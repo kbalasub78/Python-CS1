@@ -53,3 +53,16 @@ while True:
 
 print( "Ticket is : ", caught_speeding(vehicleSpeed, bdayFlag) )
 
+## Following code is to check the function for various input values
+##print(caught_speeding(60, False)) #0
+##print(caught_speeding(65, False)) #1
+##print(caught_speeding(65, True)) #0
+##print(caught_speeding(80, False)) #1
+##print(caught_speeding(85, False)) #2
+##print(caught_speeding(85, True)) #1
+##print(caught_speeding(70, False)) #1
+##print(caught_speeding(75, False)) #1
+##print(caught_speeding(75, True)) #1
+##print(caught_speeding(40, False)) #0
+##print(caught_speeding(40, True)) #0
+##print(caught_speeding(90, False)) #2
