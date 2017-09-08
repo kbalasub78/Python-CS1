@@ -13,14 +13,14 @@ import sys
 ## alarm_clock module definition
 def alarm_clock(day, onVacation):    
     if not onVacation : ## Not on vacation
-        if day in range(1,6) :
+        if day in range(1,6) : ## Weekdays
             alarm = "7:00"
-        else:
+        else: ## Week-ends
             alarm = "10:00"
     elif onVacation : ## On vacation
-        if day in range(1,6):
+        if day in range(1,6): ## Weekdays
             alarm = "10:00"
-        else:
+        else: ## Week-ends
             alarm = "Off"
     
     return alarm
@@ -29,16 +29,35 @@ def alarm_clock(day, onVacation):
 while True:
     try:
         dayValue = int(input("Enter the day of the week (0=Sun, 1=Mon, 2=Tue,..,6=Sat) : "))
+        if (dayValue not in range(0,7) ) :
+            raise ValueError()
+        break
+    except ValueError:
+        print("Day of the week input should be in range of 0 to 6")
+
+while True:
+    try:
         vacation = input("Are you on vacation (True or False): ").title()
         if (vacation != 'True' and vacation != 'False') :
-            raise ValueError("Input data format is incorrect")
+            raise ValueError()
 
         if(vacation == 'True'): vacationFlag = True
         elif(vacation == 'False'): vacationFlag = False
 
         break
-    except:
-        print("Error in data entered", sys.exc_info())
+    except ValueError:
+        print("Vacation input should be True or False")
 
 ## Print the alarm setting
 print( "Alarm setting : ", alarm_clock( dayValue, vacationFlag) )
+
+## Following is test the function code for various input values
+##print( alarm_clock( 1, False)) ## 7:00
+##print( alarm_clock( 5, False)) ## 7:00
+##print( alarm_clock( 0, False)) ## 10:00
+##print( alarm_clock( 6, False)) ## 10:00
+##print( alarm_clock( 0, True)) ## Off
+##print( alarm_clock( 6, True)) ## Off
+##print( alarm_clock( 1, True)) ## 10:00
+##print( alarm_clock( 3, True)) ## 10:00
+##print( alarm_clock( 5, True)) ## 10:00
