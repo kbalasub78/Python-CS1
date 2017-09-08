@@ -33,17 +33,23 @@ def caught_speeding(speed, is_birthday):
 ## Get input of speed and birthday
 while True:
     try:
-        vehicleSpeed = int(input("Enter the speed of the vehicle : "))
-        bdayFlag = input("Is today driver birthday (True or False): ").title()
-        if (bdayFlag != 'True' and bdayFlag != 'False') :
-            raise ValueError("Input data format is incorrect")
-
-        if(bdayFlag == 'True'): bdayFlag = True
-        elif(bdayFlag == 'False'): bdayFlag = False
-
+        vehicleSpeed = float(input("Enter the speed of the vehicle : "))
         break
     except:
-        print("Error in data entered", sys.exc_info())
+        print("Enter speed as numeric number")
+        
+while True:
+    try:
+        bdayFlag = input("Is today driver birthday (True or False): ").title()
+        if (bdayFlag != 'True' and bdayFlag != 'False') :
+            raise ValueError()
+        
+        if(bdayFlag == 'True'): bdayFlag = True
+        elif(bdayFlag == 'False'): bdayFlag = False
+        
+        break
+    except ValueError:
+        print("Birthday information input should be True or False")
 
 print( "Ticket is : ", caught_speeding(vehicleSpeed, bdayFlag) )
 
